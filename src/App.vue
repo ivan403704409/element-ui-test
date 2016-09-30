@@ -47,6 +47,8 @@
       <el-button :plain="true" @click.native="open4">错误</el-button>
     
 
+    <v-table></v-table>
+
     </el-col>
   </el-row>
 
@@ -66,7 +68,11 @@
 </style>
 
 <script>
+import vTable from './components/table.vue'
   export default {
+    components:{
+      vTable,
+    },
     data() {
       return {
         radio: '',
