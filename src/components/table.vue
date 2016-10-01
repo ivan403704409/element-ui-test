@@ -1,9 +1,9 @@
 <template>
+<div>
   <el-table
     :data="tableData3"
     selection-mode="multiple"
-    style="width: 100%"
-    @selectionchange="handleMultipleSelectionChange">
+    style="width: 100%">
     <el-table-column
       type="selection"
       width="50">
@@ -25,10 +25,16 @@
       show-tooltip-when-overflow>
     </el-table-column>
   </el-table>
+  <input type="text" v-model="tips.data">
+  <p>{{tips.data}}</p>
+</div>
+  
 </template>
 
 <script>
   export default {
+
+    props: ['tips'],
     data() {
       return {
         tableData3: [{
@@ -65,9 +71,7 @@
     },
 
     methods: {
-      handleSelectionChange(val) {
-        this.multipleSelection = val;
-      }
+
     }
   }
 </script>

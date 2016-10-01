@@ -2,7 +2,7 @@
 <div>
   <!-- 顶部导航 -->
   <el-menu theme="dark" default-active="1" class="el-menu-demo" mode="horizontal">
-    <el-menu-item index="1">处理中心</el-menu-item>
+    <el-menu-item index="1">三到教务平台</el-menu-item>
     <el-submenu index="2">
       <template slot="title">我的工作台</template>
       <el-menu-item index="2-1">选项1</el-menu-item>
@@ -47,8 +47,11 @@
       <el-button :plain="true" @click.native="open4">错误</el-button>
     
 
-    <v-table></v-table>
+      <p>table-{{tips}}</p>
+      <v-table :tips.sync="tips"></v-table>
 
+
+      <transition></transition>
     </el-col>
   </el-row>
 
@@ -69,14 +72,27 @@
 
 <script>
 import vTable from './components/table.vue'
+import transition from './components/transition.vue'
+import logMixin from './mixins/log.js'
   export default {
     components:{
       vTable,
+      transition,
     },
+    mixins: [logMixin],
     data() {
       return {
+        tips: {
+          data: 123
+        },
+        age: '',
         radio: '',
         fullscreenLoading: false
+      }
+    },
+    watch: {
+      age(newVal){
+        console.log(newVal)
       }
     },
     methods: {
