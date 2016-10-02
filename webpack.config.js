@@ -14,7 +14,10 @@ module.exports = {
   resolve: {
     alias: {
       'vue': 'vue/dist/vue.js',
-    }
+      'components': __dirname + '/src/components',
+      'src': __dirname + '/src',
+    },
+    extensions: ['', '.vue', '.js', '.json', '.css']
   },
   module: {
     loaders: [
@@ -42,7 +45,7 @@ module.exports = {
   },
   babel: {
       presets: ['es2015', "stage-0"],
-      plugins: ['transform-runtime']
+      // plugins: ['transform-runtime']
   },
   devServer: {
     historyApiFallback: true,

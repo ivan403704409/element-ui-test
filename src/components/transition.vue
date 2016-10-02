@@ -22,6 +22,10 @@
 		<button @click="$store.dispatch('cart/ADD')">Sell</button> 
 		收入: {{$store.state.cart.income}}
 		剩余：{{$store.state.cart.total}}
+
+		<textarea v-model="text">
+		</textarea>
+		{{text}}
 	</div>
 </div>
 </template>
@@ -41,6 +45,7 @@ export default {
 	},
 	data() {
 		return {
+			text: 'bar',
 			items: [1,2,3,4,5,6,7,8,9],
     		nextNum: 10,
     		count: '',
@@ -95,7 +100,7 @@ export default {
 
 <style>
 .list-complete-item {
-  transition: all 5s;
+  transition: all .3s;
   display: inline-block;
   margin-right: 10px;
 }
