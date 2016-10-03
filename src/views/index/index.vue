@@ -134,5 +134,11 @@ import logMixin from 'src/mixins/log.js'
         });
       }
     },
+    beforeRouteEnter(to, from, next){
+      next()
+    },
+    beforeRouteLeave(){
+
+    },
   }
 </script>

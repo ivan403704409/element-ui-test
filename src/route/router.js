@@ -25,5 +25,13 @@ const routes = [
     { path: '*', redirect: '/index' }
 ]
 	
-const router = new VueRouter({ routes })
+const router = new VueRouter({ 
+	// mode: 'history',
+	routes
+})
+
+router.beforeEach((to, from , next) => {
+	next()
+})
+
 export default router
