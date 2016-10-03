@@ -19,7 +19,7 @@
 
 	<div>
 		<!-- {{$store.state.count}} -->
-		<button @click="$store.dispatch('cart/ADD')">Sell</button> 
+		<button @click="cartADD">Sell</button> 
 		收入: {{$store.state.cart.income}}
 		剩余：{{$store.state.cart.total}}
 
@@ -66,6 +66,9 @@ export default {
 
 	},
 	methods: {
+		...mapActions({
+			cartADD: 'cart/ADD'
+		}),
 	    randomIndex: function () {
 	      return Math.floor(Math.random() * this.items.length)
 	    },
