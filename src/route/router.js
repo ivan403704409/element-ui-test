@@ -3,7 +3,6 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 const routes = [
-	// { path: '*', redirect: '/index' },
 	{
 		path: '/login',
 		component(resolve) {
@@ -22,6 +21,8 @@ const routes = [
 			require(['../views/chat'], resolve)
 		}
 	},
+	// catch all redirect
+    { path: '*', redirect: '/index' }
 ]
 	
 const router = new VueRouter({ routes })
