@@ -3,8 +3,36 @@
   <head>
     <meta charset="utf-8">
     <title>element-ui-test</title>
+    <style>
+		#loading { position: fixed; z-index: 9999999999; left: 0; top: 0; width: 100%; height: 100%; background-color: #fff; color: #0070FF; text-align: center; }
+		.ball-clip-rotate-multiple { position: absolute; left: 0; right: 0; top: 0; bottom: 0; margin: auto; width: 35px; height: 35px;  }
+		.ball-clip-rotate-multiple > div { -webkit-animation-fill-mode: both; animation-fill-mode: both; position: absolute; left: 0px; top: 0px; border: 2px solid #0070FF; border-bottom-color: transparent; border-top-color: transparent; border-radius: 100%; height: 35px; width: 35px; -webkit-animation: rotate 1s 0s ease-in-out infinite; animation: rotate 1s 0s ease-in-out infinite; }
+		.ball-clip-rotate-multiple > div:last-child { display: inline-block; top: 10px; left: 10px; width: 15px; height: 15px; -webkit-animation-duration: 0.5s; animation-duration: 0.5s; border-color: #0070FF transparent #0070FF transparent; -webkit-animation-direction: reverse; animation-direction: reverse; }
+		@-webkit-keyframes ball-scale-ripple {
+			0% { -webkit-transform: scale(0.1); transform: scale(0.1); opacity: 1; }
+			70% { -webkit-transform: scale(1); transform: scale(1); opacity: 0.7; }
+			100% { opacity: 0.0; }
+		}
+		@keyframes ball-scale-ripple {
+			0% { -webkit-transform: scale(0.1); transform: scale(0.1); opacity: 1; }
+			70% { -webkit-transform: scale(1); transform: scale(1); opacity: 0.7; }
+			100% { opacity: 0.0; }
+		}
+		#loading.hide{
+			transition: opacity 1s;
+			opacity: 0;
+		}
+    </style>
   </head>
   <body>
+  	<div id="loading">
+		<div class="loader">
+			<div class="loader-inner ball-clip-rotate-multiple">
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+  	</div>
     <div id="app"></div>
     <script src="dist/build.js"></script>
   </body>
