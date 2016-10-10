@@ -1,7 +1,7 @@
 <!-- 侧边导航 -->
 <template>
 <div class="m-sidebar">
-	<el-menu default-active="chat" theme="dark" class="el-menu-vertical-demo" router>
+	<el-menu default-active="home" theme="dark" class="el-menu-vertical-demo" router>
 	    <el-submenu index="1">
 	      <template slot="title"><i class="el-icon-message"></i>导航一</template>
 	      <el-menu-item-group title="分组一">
@@ -14,6 +14,7 @@
 	    </el-submenu>
 	    <el-menu-item index="index"><i class="el-icon-menu"></i>导航二</el-menu-item>
 	    <el-menu-item index="chat"><i class="el-icon-setting"></i>导航三</el-menu-item>
+	    <el-menu-item index="home"><i class="el-icon-setting"></i>siper</el-menu-item>
 	 </el-menu>
 </div>
 </template>

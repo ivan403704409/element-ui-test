@@ -4,6 +4,12 @@ Vue.use(VueRouter)
 
 const routes = [
 	{
+		path: '/home',
+		component(resolve) {
+			require(['../views/home'], resolve)
+		}
+	},
+	{
 		path: '/login',
 		component(resolve) {
 			require(['../views/login'], resolve)
