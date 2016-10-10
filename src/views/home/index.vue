@@ -8,7 +8,7 @@
 	        @slide-change-end="onSlideChangeEnd">
 	    <div class="page">
 			<div id="page1"></div>
-			<page1></page1>
+			<!-- <page1></page1> -->
 	    	<p v-for="(item, index) in 100">{{index}}</p>
 	    </div>
 	    <div class="page">
@@ -45,12 +45,18 @@ export default {
 		onSlideChangeStart (currentPage) {
 			if( currentPage == 1 ){
 				console.log('page1')
-			    Vue.component('page1', function (resolve) {
-				  // 这个特殊的 require 语法告诉 webpack
-				  // 自动将编译后的代码分割成不同的块，
-				  // 这些块将通过 Ajax 请求自动下载。
-				  require(['./page1.vue'], resolve)
-				})
+				
+			    require(['./page1.vue'], (page1) => {
+			    	var Parent = Vue.extend({
+				        template: '<div><my-component></my-component></div>',
+				        components: {
+				            'my-component': page1,
+				        }
+				    })
+				    new Parent({
+				        el: '#page1'
+				    })
+			    })
 			}else if( currentPage == 2){
 
 			}else if( currentPage == 3 ){
