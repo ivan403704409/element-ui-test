@@ -1,6 +1,11 @@
 <!--  -->
 <template>
 <div>
+	
+	<v-circle :percent="80" :stroke-width=2 :trail-width=2 stroke-color="#04BE02">
+        <span>80</span>
+    </v-circle>
+
 	<swiper ref="swiper"
 	        direction="horizontal"
 	        :mousewheel-control="false"
@@ -20,6 +25,7 @@
 	    	<p v-for="(item, index) in 100">{{index}}</p>
 	    </div>
 	</swiper>
+
 </div>
 </template>
 <style scoped>
@@ -32,9 +38,11 @@
 <script>
 import Vue from 'vue'
 import swiper from 'components/swiper'
+import vCircle from 'components/circle'
 export default {
 	components: {
 		swiper,
+		vCircle,
 	},
 	data(){
 		return {
